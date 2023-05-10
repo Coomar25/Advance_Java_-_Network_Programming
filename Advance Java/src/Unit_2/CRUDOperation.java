@@ -83,7 +83,6 @@ public class CRUDOperation {
                     } else {
                         JOptionPane.showMessageDialog(null, "Data not inserted");
                     }
-
                     conn.close();
                 } catch (Exception e) {
                     JOptionPane.showMessageDialog(null, e);
