@@ -5,13 +5,10 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-
-
 import javax.swing.*;
 
 
 public class CRUDOperation {
-
     private JTextField txtRollno;
     private JTextField txtName;
     private JTextField txtAddress;
@@ -69,7 +66,7 @@ public class CRUDOperation {
             public void actionPerformed(ActionEvent ae) {
                 try {
                     Class.forName("com.mysql.cj.jdbc.Driver");
-                    Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/bca", "root", "");
+                    Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3307/bca", "root", "");
 
                     String str = "INSERT INTO tblStudent(ID,Rollno,Name,Address) VALUES(NULL,?,?,?)";
                     PreparedStatement ptmt = conn.prepareStatement(str);
