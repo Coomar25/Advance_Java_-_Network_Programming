@@ -29,9 +29,9 @@ public class SimpleCalculator extends JFrame {
         resultField = new JTextField();
         resultField.setEditable(false);
 
-        inputPanel.add(new JLabel("First Number:"));
+        inputPanel.add(new JLabel("First :"));
         inputPanel.add(firstNumberField);
-        inputPanel.add(new JLabel("Second Number:"));
+        inputPanel.add(new JLabel("Second :"));
         inputPanel.add(secondNumberField);
         inputPanel.add(new JLabel("Result:"));
         inputPanel.add(resultField);

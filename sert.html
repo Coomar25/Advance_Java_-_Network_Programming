@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Factorial Calculator</title>
+</head>
+<body>
+    <p>Factorial Calculator</p>
+
+    <label for="numberInput">Enter a number:</label><br><br>
+    <input type="number" id="numberInput"><br><br>
+
+    <button onclick="calculateFactorial()">Calculate Factorial</button>
+
+    <br>
+
+    <label for="result">Factorial:</label> <br><br>
+    <input type="text" id="result" readonly>
+
+    <script>
+        function calculateFactorial() {
+            // Get the input value
+            var numberInput = document.getElementById("numberInput").value;
+
+            // Convert the input to a number
+            var number = parseInt(numberInput);
+
+            // Check if the input is a valid number
+            if (!isNaN(number)) {
+                var factorial = 1;
+
+                // Calculate factorial
+                for (var i = 1; i <= number; i++) {
+                    factorial *= i;
+                }
+
+                // Display the result in the second text box
+                document.getElementById("result").value = factorial;
+            } else {
+                // Display an error message if the input is not a valid number
+                document.getElementById("result").value = "Invalid Input";
+            }
+        }
+    </script>
+</body>
+</html>
+
