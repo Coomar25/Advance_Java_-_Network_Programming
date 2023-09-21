@@ -19,7 +19,7 @@ public class MouseEventCalculator extends JFrame {
     private boolean isMousePressed;
 
     public MouseEventCalculator() {
-        setTitle("Mouse Event Calculator");
+        setTitle("Mouse Calculator");
         setSize(300, 150);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
@@ -30,11 +30,11 @@ public class MouseEventCalculator extends JFrame {
         resultField.setEditable(false);
 
         JPanel panel = new JPanel(new GridLayout(3, 2));
-        panel.add(new JLabel("Number 1:"));
+        panel.add(new JLabel("Num1:"));
         panel.add(num1Field);
-        panel.add(new JLabel("Number 2:"));
+        panel.add(new JLabel("Num2:"));
         panel.add(num2Field);
-        panel.add(new JLabel("Result:"));
+        panel.add(new JLabel("Res:"));
         panel.add(resultField);
 
         num1Field.addMouseListener(new MouseAdapter() {

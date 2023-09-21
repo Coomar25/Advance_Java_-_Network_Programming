@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cookies Example</title>
+</head>
+<body>
+    <h1>Cookies Example</h1>
+
+    <!-- Input field to set a custom cookie -->
+    <label for="customCookie">Enter Custom Cookie Value:</label><br><br>
+    <input type="text" id="customCookie" placeholder="Enter value"><br><br>
+    <button onclick="setCustomCookie()">Set Custom Cookie</button><br><br>
+
+    <!-- Button to Read Cookie -->
+    <button onclick="readCookie()">Read Cookie</button>
+
+    <!-- Display Cookie Value -->
+    <p id="cookieValue"></p>
+
+    <script>
+        // Function to set a custom cookie
+        function setCustomCookie() {
+            // Get the custom cookie value from the input field
+            var customCookieValue = document.getElementById("customCookie").value;
+
+            // Check if the value is not empty
+            if (customCookieValue.trim() !== "") {
+                // Cookie name
+                var cookieName = "customCookie";
+
+                // Cookie expiration date (in days)
+                var daysToExpire = 7;
+
+                // Calculate the expiration date
+                var expirationDate = new Date();
+                expirationDate.setDate(expirationDate.getDate() + daysToExpire);
+
+                // Create the cookie string
+                var cookieString = cookieName + "=" + encodeURIComponent(customCookieValue) +
+                    "; expires=" + expirationDate.toUTCString() + "; path=/";
+
+                // Set the custom cookie
+                document.cookie = cookieString;
+
+                alert("Custom cookie set!");
+            } else {
+                alert("Please enter a value for the custom cookie.");
+            }
+        }
+
+        // Function to read a cookie
+        function readCookie() {
+            // Cookie name to read
+            var cookieName = "customCookie";
+
+            // Split cookies by semicolon
+            var cookies = document.cookie.split(";");
+
+            // Loop through cookies to find the desired one
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = cookies[i].trim();
+                if (cookie.indexOf(cookieName + "=") === 0) {
+                    // Extract and decode the cookie value
+                    var cookieValue = decodeURIComponent(cookie.substring(cookieName.length + 1));
+                    document.getElementById("cookieValue").textContent = "Custom Cookie Value: " + cookieValue;
+                    return;
+                }
+            }
+
+            document.getElementById("cookieValue").textContent = "Cookie has been added successfully.";
+        }
+    </script>
+</body>
+</html>

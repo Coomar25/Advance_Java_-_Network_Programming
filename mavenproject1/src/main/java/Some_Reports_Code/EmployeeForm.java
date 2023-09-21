@@ -36,7 +36,7 @@ public class EmployeeForm extends JFrame {
         delete = createButton("Delete");
         search = createButton("Search");
 
-        JPanel panel = new JPanel(new GridLayout(4, 2));
+        JPanel panel = new JPanel(new GridLayout(5, 1));
         panel.add(new JLabel("ID:"));
         panel.add(id);
         panel.add(new JLabel("Name:"));
