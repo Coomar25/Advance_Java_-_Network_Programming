@@ -68,7 +68,7 @@ public class CRUDOperation {
                     Class.forName("com.mysql.cj.jdbc.Driver");
                     Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3307/bca", "root", "");
 
-                    String str = "INSERT INTO tblStudent(ID,Rollno,Name,Address) VALUES(NULL,?,?,?)";
+                    String str = "INSERT INTO employee(ID, name, salary) VALUES(NULL,?,?,?)";
                     PreparedStatement ptmt = conn.prepareStatement(str);
                     ptmt.setInt(1, Integer.parseInt(txtRollno.getText()));
                     ptmt.setString(2, txtName.getText());
